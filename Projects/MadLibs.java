@@ -1,3 +1,6 @@
+//TODO: Making a madlibs game in JAVA
+
+
 import java.util.Scanner;
 
 public  class MadLibs 

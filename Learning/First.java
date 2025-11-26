@@ -1,5 +1,7 @@
-public class First {
-    public static void main(String[] args) {
+//TODO: Understanding syntax of JAVA
+
+public class First { // The name of the class(file)
+    public static void main(String[] args) { // The main method
         System.out.println("Hello world!");
 
 //! Variable declaration and initialization
