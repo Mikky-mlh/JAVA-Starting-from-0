@@ -1,4 +1,4 @@
-//Todo: IF-ELSE STATEMENT
+//Todo: CONDITIONAL STATEMENTS
 
 import java.util.Scanner;
 
@@ -68,6 +68,28 @@ public class Fifth
         if (!(d > e)) {
         System.out.println("d is NOT greater than e");
         } // not operator
+
+        //* switch statement: used to perform different actions based on different conditions but uses integer values only. It is used to avoid multiple if-else statements.
+        int day = 6;
+        switch (day) {
+        case 1:
+            System.out.println("Get back to work!");
+            break;
+        case 2:
+            System.out.println("Today is Tuesday");
+            break;
+        case 3:
+            System.out.println("Today is Wednesday");
+            break;
+        case 4:
+            System.out.println("Today is Thursday");
+            break;
+        case 5:
+            System.out.println("Today is Friday");
+            break;
+        default:
+            System.out.println("HAPPY WEEKEND BABY!!"); // for no condtion match: DEFAULT
+}
 
         scanner.close();
     }
