@@ -17,6 +17,13 @@ System.out.println("My name is " + name);
 System.out.println(name.length()); //& length() method is used to get the length of the string
 System.out.println(name.toUpperCase());
 
+String gmail = "yuvrajsarathe07@gmail.com";
+System.out.println(gmail.replace("yuvraj", "mikky"));
+String username = gmail.substring(0, gmail.indexOf('@'));
+System.out.println(username);
+String domain = gmail.substring(gmail.indexOf('@') + 1);
+System.out.println(domain);
+
 String address = "Locate the New York City on the world map.";
 System.out.println(address.indexOf("locate"));
 
