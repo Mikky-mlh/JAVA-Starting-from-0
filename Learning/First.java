@@ -37,13 +37,6 @@ System.out.println("Student fee is " + studentFee);
 var temperature = 36.5; //& var keyword is used for local variable type inference. The compiler infers the type of the variable from the assigned value. very good for DSA
 System.out.println("Current temperature is " + temperature + " degree Celsius.");
 
-/*
-* Non-primitive/Reference data types = String, Arrays, Classes, Interface
-*/
-
-String name = "Mikky";
-System.out.println("My name is " + name);
-
 int arr[]= {1,2,3,4,5}; //& arr is nothing but a list
 System.out.println("First element of array is " + arr[0]);
 System.out.println("Length of array is " + arr.length);
