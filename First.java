@@ -19,12 +19,15 @@ System.out.println("USA currency is " + dollarSign);
 System.out.println("My grade is " + grade);
 boolean isStudent = true;
 
-if(isStudent) { //& if-else is a conditional satement
+if(isStudent) { //& if-else is a conditional satement: if(condition) { //code to be executed if condition is true } else { //code to be executed if condition is false }
     System.out.println("I am a student.");
 }
 else {
     System.out.println("I am not a student.");
 }
+
+final char gender = 'M'; //& final keyword is used to declare a constant variable whose value cannot be changed
+System.out.println("My gender is " + gender);
 
 /*
 * Non-primitive/Reference data types = String, Arrays, Classes, Interface
@@ -38,11 +41,11 @@ System.out.println("First element of array is " + arr[0]);
 System.out.println("Length of array is " + arr.length);
 System.out.println("Last element of array is " + arr[arr.length - 1]);
 System.out.println("Array elements are: ");
-for(int i=0; i<arr.length; i++) {
+
+for(int i=0; i<arr.length; i++) { //& for loop to iterate through the array: for(initialization; condition; increment/decrement)
+
     System.out.println(arr[i]);
 }
-
-
 
     }
 }
