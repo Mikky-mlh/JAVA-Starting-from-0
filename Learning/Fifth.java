@@ -90,6 +90,15 @@ public class Fifth
         default:
             System.out.println("HAPPY WEEKEND BABY!!"); // for no condtion match: DEFAULT
 }
+        scanner.nextLine();
+        System.out.print("Enter your day: ");
+        String Day = scanner.nextLine();
+
+        switch(Day){
+            case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" -> System.out.println("It is a weekday");
+            case "Saturday", "Sunday" -> System.out.println("It is a WEEKEND!!");
+            default -> System.out.println("Invalid day");
+        } //~Enhacned switch cases
 
         scanner.close();
     }

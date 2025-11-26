@@ -17,7 +17,7 @@ public class Second {
 
         System.out.println("The sum is: " + (a + b));
 
-        scanner.nextLine(); //& Consume leftover newline character after nextInt() to prevent skipping next input
+        scanner.nextLine(); //~ Consume leftover newline character after nextInt() to prevent skipping next input
         
         System.out.print("Enter your full name: ");
         String fullName = scanner.nextLine(); //& nextLine() reads entire line including spaces
