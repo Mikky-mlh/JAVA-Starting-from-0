@@ -2,7 +2,7 @@
 
 public class Third {
     public static void main(String[] args) {
-        double x, y;
+        int x, y;
         x = 10;
         y = 20;
         System.out.println("Sum is: " + (x + y));
@@ -13,7 +13,7 @@ public class Third {
         System.out.println("Increment is: " + (++x));
         System.out.println("Decrement is: " + (--y));
         
-        double a,b;
+        int a,b;
         
         a = 15;
         b = 10;
