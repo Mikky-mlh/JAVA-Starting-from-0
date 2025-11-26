@@ -30,5 +30,17 @@ public class Third {
         
         System.out.println((x/y)+(9*a/b)-(a*x-b*y)); //& PEMDAS rule
 
+        System.out.println(Math.max(a, b));
+        System.out.println(Math.min(a, b));
+        System.out.println(Math.sqrt(100));
+        System.out.println(Math.abs(-100));
+        System.out.println(Math.pow(2,3));
+        System.out.println(Math.round(5.6));
+        System.out.println(Math.floor(5.6));
+        System.out.println(Math.ceil(5.6));
+        System.out.println(Math.random());
+        int randomNum = (int) Math.random() * 101;
+        System.out.println(randomNum);
+
     }
 }
