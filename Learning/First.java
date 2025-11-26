@@ -1,3 +1,4 @@
+package Learning;
 public class First {
     public static void main(String[] args) {
         System.out.println("Hello world!");
@@ -31,6 +32,9 @@ System.out.println("My gender is " + gender);
 
 float studentFee = 2500.50f; //& float data type is used to store decimal values with single precision. f in last indicates that it's a float literal and without it the program will not compile
 System.out.println("Student fee is " + studentFee);
+
+var temperature = 36.5; //& var keyword is used for local variable type inference. The compiler infers the type of the variable from the assigned value. very good for DSA
+System.out.println("Current temperature is " + temperature + " degree Celsius.");
 
 /*
 * Non-primitive/Reference data types = String, Arrays, Classes, Interface
