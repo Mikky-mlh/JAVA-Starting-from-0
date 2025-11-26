@@ -1,4 +1,3 @@
-package Learning;
 public class First {
     public static void main(String[] args) {
         System.out.println("Hello world!");
@@ -20,7 +19,7 @@ System.out.println("USA currency is " + dollarSign);
 System.out.println("My grade is " + grade);
 boolean isStudent = true;
 
-if(isStudent) { //& if-else is a conditional satement: if(condition) { //code to be executed if condition is true } else { //code to be executed if condition is false }
+if(isStudent) { //& if-else is a conditional statement: if(condition) { //code to be executed if condition is true } else { //code to be executed if condition is false }
     System.out.println("I am a student.");
 }
 else {
