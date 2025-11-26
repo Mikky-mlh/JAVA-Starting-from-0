@@ -29,6 +29,9 @@ else {
 final char gender = 'M'; //& final keyword is used to declare a constant variable whose value cannot be changed
 System.out.println("My gender is " + gender);
 
+float studentFee = 2500.50f; //& float data type is used to store decimal values with single precision. f in last indicates that it's a float literal and without it the program will not compile
+System.out.println("Student fee is " + studentFee);
+
 /*
 * Non-primitive/Reference data types = String, Arrays, Classes, Interface
 */
