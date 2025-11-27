@@ -67,6 +67,27 @@ public class Ninth {
         }
     }
 
+    //~ Varargs allows a method to accept zero or more arguments.
+    //~ The varargs parameter is treated as an array inside the method.
+    //~ The '...' syntax after the data type indicates a varargs parameter.
+    static int sumVarArgs(int... numbers) {
+        int sum = 0;
+        System.out.println("Arguments received: " + numbers.length);
+        for (int num : numbers) {
+            sum += num;
+        }
+        return sum;
+    }
+    
+    //~ A method can have other parameters along with varargs, 
+    //~ but the varargs parameter must be the LAST parameter in the method signature.
+    static void printItems(String listName, String... items) {
+        System.out.println("\nItems in " + listName + ":");
+        for (String item : items) {
+            System.out.println("- " + item);
+        }
+    }
+
     public static void main(String[] args) {
         myMethod(); //& Calling a method
         stringMethod("Mikky"); //& Calling a method with a parameter
@@ -99,6 +120,20 @@ public class Ninth {
 
         countdown(5);
 
+        //! Varargs (Variable Arguments): a feature that allows a method to accept a variable number of arguments (zero or more).
+        //~ It provides a shorter way to pass an array to a method.
+        
+        // Calling the varargs method with different numbers of arguments
+        System.out.println("Sum (no args): " + sumVarArgs());
+        System.out.println("Sum (one arg): " + sumVarArgs(10));
+        System.out.println("Sum (multiple args): " + sumVarArgs(1, 2, 3, 4, 5));
+        
+        // You can also pass an array directly
+        int[] myNumbers = {10, 20, 30};
+        System.out.println("Sum (from array): " + sumVarArgs(myNumbers));
+        
+        printItems("Shopping List", "Milk", "Bread", "Eggs");
+        printItems("Todo List"); // Calling with no varargs arguments
 
     }
 

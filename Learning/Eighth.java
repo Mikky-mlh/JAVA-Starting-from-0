@@ -1,5 +1,7 @@
 //TODO: ARRAYS
 
+import java.util.Arrays; //~ For sorting and searching
+import java.util.Scanner;
 
 public class Eighth{
 
@@ -42,6 +44,7 @@ public class Eighth{
 
 
         //! Bubble sort
+        System.out.println("Bubble sort");
         for(int i = 0; i < arr.length - 1; i++) {
             for(int j = 0; j < arr.length - i - 1; j++) {
                 if(arr[j] > arr[j + 1]) {
@@ -53,6 +56,14 @@ public class Eighth{
             }
         }
 
+        for(int num : arr){
+            System.out.println(num);
+        }
+
+
+        //! Using Arrays.sort()
+        System.out.println("Using Arrays.sort()");
+        Arrays.sort(arr);
         for(int num : arr){
             System.out.println(num);
         }
@@ -99,6 +110,48 @@ public class Eighth{
                 System.out.println(num);
             }
         }
+
+        //! User input in array
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter number of items you want to add in an array: ");
+        int num = scanner.nextInt();
+        String[] userArray = new String[num];
+        for (int i = 0; i < userArray.length; i++)
+        {
+            System.out.print("Enter item " + (i + 1) + ": ");
+            userArray[i] = scanner.next();
+        }
+        System.out.println("Your array is: ");
+        for (String item : userArray)
+        {
+            System.out.println(item);
+        }
+
+        //! Search in Arrays
+
+        System.out.print("Enter item to search in array: ");
+        String searchItem = scanner.next();
+        boolean found = false;
+        for (String item : userArray)
+        {
+            if (item.equals(searchItem))
+            {
+                found = true;
+                break;
+            }
+        }
+        if (found)
+        {
+            System.out.println("Item found in array at index: " + Arrays.asList(userArray).indexOf(searchItem));
+        }
+        else
+        {
+            System.out.println("Item not found in array");
+        }
+
+        scanner.close();
+    
 
     }
 
