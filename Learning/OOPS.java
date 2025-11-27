@@ -7,19 +7,25 @@ class Car {
     String model;
     int year;
     String color;
+    boolean isfourwheeler; 
 
     //! Constructor
     // This is a special method used to initialize a new object of the Car class.
     // It has the same name as the class and no return type.
     // It takes parameters to set the initial values of the object's attributes.
+    //* They can also be OVERLOADED!
     public Car(String company, String model, int year, String carColor) {
         System.out.println("A new car is being created...");
-        // The 'this' keyword refers to the current object's attributes.
-        // It's used to distinguish between the attribute (this.model) and the parameter (model).
         this.company = company;
         this.model = model;
         this.year = year;
         this.color = carColor;
+        this.isfourwheeler = true;
+    }
+
+    //& Constructor chaining: calling another constructor using this()
+    public Car(String company, String model, int year) {
+        this(company, model, year, "Unknown"); //& Calls the main constructor with default color
     }
 
     // Methods
@@ -31,6 +37,11 @@ class Car {
     void displayDetails() {
         System.out.println("Car Details: " + this.year + " " + this.color + " " + this.company + " " + this.model);
     }
+
+    void drive() {
+        System.out.println("You are driving a " + this.color + " " + this.company + " " + this.model);
+    }
+
 }
 
 
@@ -39,21 +50,32 @@ class Car {
 
         // Here, we are creating two different 'Car' objects from the 'Car' class blueprint.
         // We use the 'new' keyword and call the constructor with specific values.
-        Car myFerrari = new Car("Ferrari", "F50", 2022, "Red");
-        Car myPorsche = new Car("Porsche", "911", 2023, "Silver");
+        Car myFerrari = new Car("Ferrari", "F50", 2022, "red");
+        Car myPorsche = new Car("Porsche", "911", 2023, "blue");
+        Car myMerc = new Car("Mercedes", "C63", 2022, "black");
 
-        
-        myFerrari.displayDetails();
-        myFerrari.honk();
+        Car[] cars = {myFerrari, myPorsche, myMerc};
 
-        myPorsche.displayDetails();
-        myPorsche.honk();
+        for (Car car : cars) {
+            car.honk();
+            car.displayDetails();
+            car.drive();
+        }
 
         //! Accessing class from different files
         secondOOPS obj = new secondOOPS();
         obj.x = 20;
         obj.y = 30;
         System.out.println(obj.x + obj.y);
+
+        FriendsOOPS friend1 = new FriendsOOPS("Mikky");
+        FriendsOOPS friend2 = new FriendsOOPS("Yuvraj");
+
+        System.out.println(friend1.name);
+        System.out.println(friend2.name);
+        System.out.println(FriendsOOPS.numberOfFriends);
+        System.out.println(friend1.numberOfFriends); //& Can also be accessed using object reference, but not recommended
+        System.out.println(friend2.numberOfFriends);
 
     }
 }
