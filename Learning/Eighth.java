@@ -1,3 +1,6 @@
+//TODO: ARRAYS
+
+
 public class Eighth{
 
     public static void main(String[] args){
@@ -52,6 +55,49 @@ public class Eighth{
 
         for(int num : arr){
             System.out.println(num);
+        }
+
+        //! 2D array
+
+        int[][] myNumbers = { {1, 4, 2}, {3, 6, 8} };
+        /*
+        * 1 4 2
+        * 3 6 8
+        & myNumbers[0][0] = 1
+        & myNumbers[0][1] = 4
+        & myNumbers[0][2] = 2
+        & myNumbers[1][0] = 3
+        & myNumbers[1][1] = 6
+        & myNumbers[1][2] = 8
+        ~ To access specific column: myNumbers[row][column]
+        */
+        System.out.println(myNumbers[1][2]); // Output 8
+
+        myNumbers[1][2] = 9; //& Changed value
+        System.out.println(myNumbers[1][2]); //Output 9
+
+        int[][] mynewNumbers = { {1, 4, 2}, {3, 6, 8, 5, 2} };
+        System.out.println("Rows: " + mynewNumbers.length);             // 2
+        System.out.println("Cols in row 0: " + mynewNumbers[0].length); // 3
+        System.out.println("Cols in row 1: " + mynewNumbers[1].length); // 5
+
+        for (int row = 0; row < mynewNumbers.length; row++)
+        {
+            for (int col = 0; col < mynewNumbers[row].length; col++)
+            {
+                    System.out.println("mynewNumbers[" + row + "][" + col + "] = " + mynewNumbers[row][col]);
+            }
+        }
+
+        //! OR
+
+
+        for (int[] row : mynewNumbers)
+        {
+            for (int num : row)
+            {
+                System.out.println(num);
+            }
         }
 
     }
