@@ -44,6 +44,53 @@ class Car {
 
 }
 
+class Animal{
+    String name;
+    int age;
+
+    void makeSound(){
+        System.out.println("Animal makes a sound");
+    }
+
+    void eat(){
+        System.out.println("Animal eats");
+    }
+
+    void sleep(){
+        System.out.println("Animal sleeps");
+    }
+}
+
+class Dog extends Animal{ //& Dog is a subclass of Animal and extend is used to make it inherit its properties
+    String breed;
+
+    void bark(){
+        System.out.println("Dog barks");
+    }
+}
+
+class Person{
+    String first, last;
+
+    Person(String first, String last){
+        this.first = first;
+        this.last = last;
+    }
+
+    void showName(){
+        System.out.println(first + " " + last);
+    }
+
+}
+
+class Student extends Person{
+    double gpa;
+    Student(String first, String last, double gpa){
+        super(first, last); //! super keyword is used to call the constructor of the superclass
+        this.gpa = gpa;
+    }
+}
+
 
     public class OOPS {
     public static void main(String[] args) {
@@ -76,6 +123,15 @@ class Car {
         System.out.println(FriendsOOPS.numberOfFriends);
         System.out.println(friend1.numberOfFriends); //& Can also be accessed using object reference, but not recommended
         System.out.println(friend2.numberOfFriends);
+
+        Dog dog1 = new Dog();
+        dog1.bark();
+        dog1.makeSound();
+        dog1.eat();
+        dog1.sleep();
+
+        Student s1 = new Student("Yuvraj", "Sarathe", 9.7);
+        s1.showName();
 
     }
 }
