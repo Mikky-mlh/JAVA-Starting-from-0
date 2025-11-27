@@ -94,9 +94,31 @@ public class Seventh
             fact *= p;
         }
         System.out.println("Factorial of " + n + " is " + fact);
+        
+        System.out.print("Enter a number for Fibonacci series: ");
+        int terms = scanner.nextInt();
+        System.out.print("Fibonacci Series till " + terms + " terms is: ");
+
+        int firstTerm = 0;
+        int secondTerm = 1;
+
+        if (terms >= 1) {
+            System.out.print(firstTerm);
+        }
+        if (terms >= 2) {
+            System.out.print(" " + secondTerm);
+        }
+
+        for (int v = 3; v <= terms; v++) {
+            int nextTerm = firstTerm + secondTerm;
+            System.out.print(" " + nextTerm);
+            firstTerm = secondTerm;
+            secondTerm = nextTerm;
+        }
+        System.out.println(); // Add a newline to separate outputs
+
         scanner.close();
 
-        //
 
         //! for each loop: Iterate over elements of an array or collection
         /*
@@ -125,4 +147,3 @@ public class Seventh
 
 
 }
-
