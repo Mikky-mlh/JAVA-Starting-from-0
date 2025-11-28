@@ -1,5 +1,6 @@
 //TODO: OOPS - Object-Oriented Programming
 
+
 /*
 ~ Four Pillars of OOPS:
 & 1. Encapsulation: Bundle data and methods together, hide internal details
@@ -117,6 +118,21 @@ public class OOPS {
         void displayDetails() {
             System.out.println("Car: " + this.year + " " + this.company + " " + this.model);
         }
+
+        @Override
+        public String toString()
+        {
+            return "Car{" + "company='" + company + '\'' + ", model='" + model + '\'' + ", year=" + year + '}';
+        }
+        /*
+        * Every object in Java has a toString() method. It comes from the ultimate parent class of everything in Java, the Object class.
+
+        ! By default, if you try to print an object, the toString() method gives you a string that isn't very helpful. It usually looks something like ClassName@HashCode (e.g., Car@15db9742), which is the class name followed by the object's memory address. This doesn't tell you anything about the actual data inside the object.
+        
+        & The purpose of overriding the toString() method is to provide a meaningful, human-readable string representation of an object's state. It's one of the most common methods to override for debugging and logging purposes.
+
+        */
+
     }
 
 
@@ -152,6 +168,7 @@ public class OOPS {
         System.out.println("\n A SIMPLE CLASS & OBJECT");
         Car myCar = new Car("Ferrari", "F50", 2022);
         myCar.displayDetails();
+        System.out.println(myCar); // Uses the toString() method
 
 
         System.out.println("\n DEMONSTRATING STATIC MEMBERS (from FriendsOOPS.java)");
@@ -169,3 +186,4 @@ public class OOPS {
         System.out.println("Sum from secondOOPS object: " + (obj.x + obj.y));
     }
 }
+
