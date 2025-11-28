@@ -1,6 +1,6 @@
 //TODO: Understanding syntax of JAVA
 
-public class First { // The name of the class(file)
+public class L01 { // The name of the class(file)
     public static void main(String[] args) { // The main method
         System.out.println("Hello world!");
 
