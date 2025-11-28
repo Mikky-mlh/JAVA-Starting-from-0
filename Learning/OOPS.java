@@ -9,10 +9,12 @@
 & 4. Polymorphism: One interface, multiple implementations
 */
 
-public class OOPS {
+public class OOPS 
+{
     //~ 1. ENCAPSULATION
     //& Private data + public methods to access it safely
-    static class BankAccount {
+    static class BankAccount 
+    {
         private double balance; //! Hidden from outside
 
         public BankAccount(double initialBalance) {
@@ -51,7 +53,8 @@ public class OOPS {
 
     //~ 2. ABSTRACTION
     //& Hiding the complex implementation details and showing only the essential features of the object
-    static abstract class Animal {
+    static abstract class Animal 
+    {
         final private String name;
 
         public Animal(String name) {
@@ -73,7 +76,8 @@ public class OOPS {
 
     //~ 3. INHERITANCE
     //& Dog inherits from Animal using 'extends'
-    static class Dog extends Animal {
+    static class Dog extends Animal 
+    {
         public Dog(String name) {
             //& super() calls parent constructor
             super(name);
@@ -88,7 +92,8 @@ public class OOPS {
         }
     }
 
-        static class Cat extends Animal {
+        static class Cat extends Animal
+        {
         public Cat(String name) {
             super(name);
         }
@@ -97,16 +102,17 @@ public class OOPS {
         public void makeSound() {
             System.out.println(getName() + " says: Meow!");
         }
-    }
+        }
 
 
     
     //~ SIMPLE CLASS & OBJECT
     
-    static class Car {
-        String company;
-        String model;
-        int year;
+    static class Car 
+    {
+        private String company;
+        private String model;
+        private int year;
 
         //! Constructor: initializes object
         public Car(String company, String model, int year) {
@@ -120,8 +126,7 @@ public class OOPS {
         }
 
         @Override
-        public String toString()
-        {
+        public String toString() {
             return "Car{" + "company='" + company + '\'' + ", model='" + model + '\'' + ", year=" + year + '}';
         }
         /*
@@ -133,10 +138,35 @@ public class OOPS {
 
         */
 
+        //~ Getters: Readable info of private
+
+        public int getYear() {
+            return year;
+        }
+        public String getModel() {
+            return model;
+        }
+        public String getCompany() {
+            return company;
+        }
+
+        //~ Setters: writable getters
+        public void setCompany(String company) {
+            this.company = company;
+        }
+
+        public void setModel(String model) {
+            this.model = model;
+        }
+
+        public void setYear(int year) {
+            this.year = year;
+        }
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
         System.out.println("\n DEMONSTRATING ENCAPSULATION");
         BankAccount myAccount = new BankAccount(500.00);
@@ -170,6 +200,14 @@ public class OOPS {
         myCar.displayDetails();
         System.out.println(myCar); // Uses the toString() method
 
+        System.out.println("Company: " + myCar.getCompany());
+        System.out.println("Model: " + myCar.getModel());
+        System.out.println("Year: " + myCar.getYear());
+
+        myCar.setCompany("Mercedes");
+        myCar.setModel("C-Class");
+        myCar.setYear(2023);
+        System.out.println("Updated car details: " + myCar);
 
         System.out.println("\n DEMONSTRATING STATIC MEMBERS (from FriendsOOPS.java)");
         //& Static variable: shared among all objects
