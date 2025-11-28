@@ -1,6 +1,6 @@
 //TODO: String Methods
 
-public class Fourth {
+public class L04_String {
     public static void main(String[] args) 
     {
         
