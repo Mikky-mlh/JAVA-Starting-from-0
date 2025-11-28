@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class Fifth 
+public class L05_Conditional 
 {
     public static void main(String[] args) 
     {
