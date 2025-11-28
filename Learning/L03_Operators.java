@@ -1,6 +1,6 @@
 //TODO: Arithmetic Operators
 
-public class Third {
+public class L03_Operators {
     public static void main(String[] args) {
         int x, y;
         x = 10;
