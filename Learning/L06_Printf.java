@@ -1,6 +1,6 @@
 //TODO: Understanding printf
 
-public class Sixth {
+public class L06_Printf {
     public static void main(String[] args) {
         
         String name = "Mikky";
