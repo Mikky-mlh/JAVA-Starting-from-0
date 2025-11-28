@@ -1,7 +1,7 @@
 //TODO: Methods
 
 
-public class Ninth {
+public class L09_Methods {
     static void myMethod() { //~ Creating a method
         System.out.println("I just got executed!");
     }
