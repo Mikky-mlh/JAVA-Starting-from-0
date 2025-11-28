@@ -51,7 +51,7 @@ public class OOPS {
     //~ 2. ABSTRACTION
     //& Hiding the complex implementation details and showing only the essential features of the object
     static abstract class Animal {
-        private String name;
+        final private String name;
 
         public Animal(String name) {
             this.name = name;
@@ -91,7 +91,7 @@ public class OOPS {
         public Cat(String name) {
             super(name);
         }
-        
+
         @Override
         public void makeSound() {
             System.out.println(getName() + " says: Meow!");
