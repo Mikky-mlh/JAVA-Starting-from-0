@@ -1,7 +1,7 @@
 //TODO: LOOPS
 
 import java.util.Scanner;
-public class Seventh 
+public class L07_LOOPS 
 {
     public static void main(String[] args) 
     {
