@@ -1,39 +1,19 @@
 //TODO: OOPS - Object-Oriented Programming
 
 /*
-
-*   OOPS is a programming paradigm based on the concept of "objects", which can contain
-*   data (attributes or properties) and code (methods or procedures). The primary
-*   purpose of OOPS is to increase the flexibility and maintainability of programs.
-
-~ The Four Pillars of OOPS:
-
-& 1. Encapsulation: Bundling data (attributes) and methods that work on the data
-&    into a single unit or class. It also involves data hiding, where the internal
-&    state of an object is protected from outside access.
-
-& 2. Abstraction: Hiding complex implementation details and showing only the
-&    essential features of the object. It helps in managing complexity.
-
-& 3. Inheritance: A mechanism where a new class (subclass) derives attributes
-&    and methods from an existing class (superclass). It promotes code reusability.
-
-& 4. Polymorphism: The ability of an object to take on many forms. The most common
-&    use of polymorphism in OOPS occurs when a parent class reference is used to
-&    refer to a child class object. This allows for runtime polymorphism.
+~ Four Pillars of OOPS:
+& 1. Encapsulation: Bundle data and methods together, hide internal details
+& 2. Abstraction: Show only essential features, hide complexity
+& 3. Inheritance: Child class inherits from parent class (code reuse)
+& 4. Polymorphism: One interface, multiple implementations
 */
 
 public class OOPS {
     //~ 1. ENCAPSULATION
-    
-    //& We create a BankAccount class to demonstrate encapsulation.
-    //& The data (balance) is kept 'private', so it cannot be accessed directly from outside the class.
-    //& We provide 'public' methods (deposit, withdraw, getBalance) to interact with the data safely.
+    //& Private data + public methods to access it safely
     static class BankAccount {
-        //! private data member - hidden from other classes
-        private double balance;
+        private double balance; //! Hidden from outside
 
-        //& Constructor to initialize the account
         public BankAccount(double initialBalance) {
             if (initialBalance > 0) {
                 this.balance = initialBalance;
@@ -42,7 +22,7 @@ public class OOPS {
             }
         }
 
-        //& Public method to deposit money
+        
         public void deposit(double amount) {
             if (amount > 0) {
                 balance += amount;
@@ -52,7 +32,7 @@ public class OOPS {
             }
         }
 
-        //& Public method to withdraw money
+        
         public void withdraw(double amount) {
             if (amount > 0 && amount <= balance) {
                 balance -= amount;
@@ -62,22 +42,14 @@ public class OOPS {
             }
         }
 
-        //& Public "getter" method to view the balance
+        
         public double getBalance() {
             return balance;
         }
     }
 
-
-    
-    //~ 2, 3, & 4. ABSTRACTION, INHERITANCE, AND POLYMORPHISM
-    
-    //& We use an 'Animal' hierarchy to demonstrate these three concepts together.
-
-    //*** ABSTRACTION ***//
-    //& 'Animal' is an abstract class. It cannot be instantiated.
-    //& It contains an abstract method 'makeSound()', which has no implementation.
-    //& This forces any subclass of Animal to provide its own implementation for makeSound().
+    //~ 2. ABSTRACTION
+    //& Hiding the complex implementation details and showing only the essential features of the object
     static abstract class Animal {
         private String name;
 
@@ -85,10 +57,10 @@ public class OOPS {
             this.name = name;
         }
 
-        //& Abstract method (does not have a body)
-        public abstract void makeSound();
+        //& Abstract method: no body, must be implemented by subclass
+        public abstract void makeSound(); //! It mainly exists in the parent class but has no implementation behaviour. The implementation can be done by each child class separately according to the needs
 
-        //& Concrete method
+        //& Concrete method: has implementation
         public void sleep() {
             System.out.println(name + " is sleeping... Zzz");
         }
@@ -98,31 +70,28 @@ public class OOPS {
         }
     }
 
-    //*** INHERITANCE ***//
-    //& The 'Dog' class inherits from the 'Animal' class using the 'extends' keyword.
-    //& It gets all the non-private fields and methods from Animal (like name, sleep(), getName()).
+    //~ 3. INHERITANCE
+    //& Dog inherits from Animal using 'extends'
     static class Dog extends Animal {
         public Dog(String name) {
-            //& 'super(name)' calls the constructor of the parent class (Animal)
+            //& super() calls parent constructor
             super(name);
         }
 
-        //*** POLYMORPHISM (Method Overriding) ***//
-        //& The Dog class provides its own specific implementation for the abstract makeSound() method.
-        //& The @Override annotation is good practice to indicate that we are overriding a parent method.
+        //~ 4. POLYMORPHISM (Method Overriding)
+        //& Polymorphism: one interface, multiple implementations
+        //& Dog provides its own implementation of makeSound()
         @Override
         public void makeSound() {
             System.out.println(getName() + " says: Woof Woof!");
         }
     }
 
-    //& The 'Cat' class also inherits from 'Animal'.
-    static class Cat extends Animal {
+        static class Cat extends Animal {
         public Cat(String name) {
             super(name);
         }
-
-        //& The Cat class provides its own version of makeSound().
+        
         @Override
         public void makeSound() {
             System.out.println(getName() + " says: Meow!");
@@ -131,14 +100,14 @@ public class OOPS {
 
 
     
-    //~ A SIMPLE CLASS & OBJECT (From original file)
+    //~ SIMPLE CLASS & OBJECT
     
     static class Car {
         String company;
         String model;
         int year;
 
-        //! Constructor: A special method to initialize objects
+        //! Constructor: initializes object
         public Car(String company, String model, int year) {
             this.company = company;
             this.model = model;
@@ -153,10 +122,9 @@ public class OOPS {
 
     public static void main(String[] args) {
 
-        System.out.println("\n//*** 1. DEMONSTRATING ENCAPSULATION ***//");
-        //& Creating an instance of BankAccount. We can't access 'balance' directly.
+        System.out.println("\n DEMONSTRATING ENCAPSULATION");
         BankAccount myAccount = new BankAccount(500.00);
-        // System.out.println(myAccount.balance); //! This would cause a compile error!
+        // System.out.println(myAccount.balance); //! Compile error: balance is private
 
         System.out.println("Initial Balance: " + myAccount.getBalance());
         myAccount.deposit(200.00);
@@ -165,38 +133,38 @@ public class OOPS {
         System.out.println("Final Balance: " + myAccount.getBalance());
 
 
-        System.out.println("\n//*** 2, 3, & 4. DEMONSTRATING ABSTRACTION, INHERITANCE, AND POLYMORPHISM ***//");
-        // Animal myAnimal = new Animal("generic"); //! This would cause a compile error because Animal is abstract.
+        System.out.println("\n DEMONSTRATING ABSTRACTION, INHERITANCE, AND POLYMORPHISM");
+        // Animal myAnimal = new Animal("generic"); //! Compile error: Animal is abstract
 
-        //*** POLYMORPHISM IN ACTION ***//
-        //& We can create a reference of the parent type (Animal) and point it to a child object (Dog or Cat).
+        //~ POLYMORPHISM IN ACTION
+        //& Parent reference, child object
         Animal myDog = new Dog("Buddy");
         Animal myCat = new Cat("Whiskers");
 
-        //& When we call makeSound(), Java determines at runtime which specific version of the method to run.
-        myDog.makeSound(); // Calls the Dog's version of makeSound()
-        myCat.makeSound(); // Calls the Cat's version of makeSound()
+        //& Java calls the correct version at runtime
+        myDog.makeSound(); //& Dog's version
+        myCat.makeSound(); //& Cat's version
 
-        myDog.sleep(); // Calls the method from the parent Animal class
+        myDog.sleep(); //& Inherited from Animal
         myCat.sleep();
 
 
-        System.out.println("\n//*** A SIMPLE CLASS & OBJECT ***//");
+        System.out.println("\n A SIMPLE CLASS & OBJECT");
         Car myCar = new Car("Ferrari", "F50", 2022);
         myCar.displayDetails();
 
 
-        System.out.println("\n//*** DEMONSTRATING STATIC MEMBERS (from FriendsOOPS.java) ***//");
-        //& 'numberOfFriends' is a static variable, shared among all objects of the FriendsOOPS class.
+        System.out.println("\n DEMONSTRATING STATIC MEMBERS (from FriendsOOPS.java)");
+        //& Static variable: shared among all objects
         FriendsOOPS friend1 = new FriendsOOPS("Mikky");
         FriendsOOPS friend2 = new FriendsOOPS("Yuvraj");
         System.out.println("Friend 1: " + friend1.name);
         System.out.println("Friend 2: " + friend2.name);
-        //& We access the static variable using the class name itself.
+        //& Access static variable using class name
         System.out.println("Total number of friends created: " + FriendsOOPS.numberOfFriends);
 
 
-        System.out.println("\n//*** DEMONSTRATING CLASS FROM ANOTHER FILE (from secondOOPS.java) ***//");
+        System.out.println("\n CLASS FROM ANOTHER FILE (secondOOPS.java)");
         secondOOPS obj = new secondOOPS();
         System.out.println("Sum from secondOOPS object: " + (obj.x + obj.y));
     }
