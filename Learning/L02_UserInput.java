@@ -2,7 +2,7 @@
 
 import java.util.Scanner; //& import statement to use Scanner class from java.util package for taking user input
 
-public class Second {
+public class L02_UserInput {
 
     public static void main(String[] args) {
 
