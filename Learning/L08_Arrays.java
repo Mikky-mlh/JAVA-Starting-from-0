@@ -3,7 +3,7 @@
 import java.util.Arrays; //~ For sorting and searching
 import java.util.Scanner;
 
-public class Eighth
+public class L08_Arrays
 {
 
     public static void main(String[] args){
