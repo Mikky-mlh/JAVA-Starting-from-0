@@ -1,12 +1,15 @@
 // TODO: Hangman game in JAVA
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Hangman 
 {
-    public static void main(String[] args) 
-    {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         String word;
@@ -29,10 +32,13 @@ public class Hangman
         }
 
         int incorrectGuesses = 0;
-        int maxIncorrectGuesses = 7;
+        int maxIncorrectGuesses = 6;
 
         System.out.println("Welcome to Hangman!");
-        System.out.println("You have 7 tries to guess the word. Good luck!");
+        System.out.println("You have " + maxIncorrectGuesses + " tries to guess the word. Good luck!");
+
+        printHangman(incorrectGuesses);
+
         System.out.println("Guess the word: " + new String(guessedWord));
 
         while (incorrectGuesses < maxIncorrectGuesses)
@@ -56,6 +62,8 @@ public class Hangman
                 incorrectGuesses++;
             }
 
+            printHangman(incorrectGuesses);
+
             System.out.println("Incorrect guesses: " + incorrectGuesses);
             System.out.println("Guessed word: " + new String(guessedWord));
 
@@ -66,9 +74,57 @@ public class Hangman
         }
 
         if (incorrectGuesses == maxIncorrectGuesses) {
-            System.out.println("Game over! You ran out of incorrect guesses. The word was: " + word);
+            System.out.println("GAME OVER!! YOU KILLED HIM!!!");
+            System.out.println("The word was: " + word);
         }
 
         scanner.close();
     }
+
+    public class WordReader {
+    
+        public static String getRandomWordFromFile(String filename) throws IOException {
+            List<String> words = Files.readAllLines(Paths.get(filename));
+            Random random = new Random();
+            return words.get(random.nextInt(words.size()));
+        }
+        
+        public static void main(String[] args) {
+            try {
+                String word = getRandomWordFromFile("words.txt");
+                System.out.println("Random word from file: " + word);
+            } catch (IOException e) {
+                System.out.println("Error reading file: " + e.getMessage());
+            }
+        }
+    }
+
+    public static void printHangman(int incorrectGuesses) {
+        System.out.println("------");
+        System.out.println("|    |");
+        if (incorrectGuesses >= 1) {
+            System.out.println("|    O"); // Head
+        } else {
+            System.out.println("|");
+        }
+        if (incorrectGuesses == 2) {
+            System.out.println("|    |"); // Body
+        } else if (incorrectGuesses == 3) {
+            System.out.println("|   /|"); // Body and one arm
+        } else if (incorrectGuesses >= 4) {
+            System.out.println("|   /|\\"); // Body and both arms
+        } else {
+            System.out.println("|");
+        }
+        if (incorrectGuesses == 5) {
+            System.out.println("|   /"); // One leg
+        } else if (incorrectGuesses >= 6) {
+            System.out.println("|   / \\"); // Both legs
+        } else {
+            System.out.println("|");
+        }
+        System.out.println("|");
+        System.out.println("---");
+    }
 }
+
