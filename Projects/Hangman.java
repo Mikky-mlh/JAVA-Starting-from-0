@@ -10,10 +10,12 @@ public class Hangman
         Scanner scanner = new Scanner(System.in);
 
         String word;
-        try {
+        try
+        {
             word = WordReader.getRandomWordFromFile("words.txt");
-        } 
-        catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             System.err.println("Error: Could not read the words file. Make sure 'words.txt' exists.");
             System.err.println("Details: " + e.getMessage());
             scanner.close();
@@ -21,7 +23,8 @@ public class Hangman
         }
         
         char[] guessedWord = new char[word.length()];
-        for (int i = 0; i < guessedWord.length; i++) {
+        for (int i = 0; i < guessedWord.length; i++)
+        {
             guessedWord[i] = '_';
         }
 
@@ -32,7 +35,8 @@ public class Hangman
         System.out.println("You have 7 tries to guess the word. Good luck!");
         System.out.println("Guess the word: " + new String(guessedWord));
 
-        while (incorrectGuesses < maxIncorrectGuesses) {
+        while (incorrectGuesses < maxIncorrectGuesses)
+        {
             System.out.print("Enter a letter: ");
             char guess = scanner.next().charAt(0);
 
@@ -46,7 +50,8 @@ public class Hangman
 
             if (found) {
                 System.out.println("Correct guess!");
-            } else {
+            }
+            else {
                 System.out.println("Incorrect guess!");
                 incorrectGuesses++;
             }
